@@ -1,4 +1,5 @@
 var readLineSync = require("readline-sync");
+var chalk = require("chalk");
 
 var currentScore = 0;
 var highScore = [0];
@@ -25,16 +26,19 @@ var questions = [
   }
 ];
 
+var title = chalk.bold.bgCyanBright;
+
+console.log(title("-----Welcome to DC Fan Quiz-----"))
 function quizGame(input, answer) {
   if (input === answer) {
-    console.log("Correct Answer!");
+    console.log(chalk.bold.bgGreen("Correct !"));
     currentScore = currentScore + 1;
     if(currentScore > highScore[0]) {
       highScore[0] = currentScore;
     }
     
   } else {
-    console.log("Wrong Answer!");
+    console.log(chalk.bold.bgRed("Incorrect !"));
   }
 }
 
@@ -46,9 +50,10 @@ for (var i = 0; i < questions.length; i++) {
     console.log("------Level-3-------");
   }
   var ques = questions[i].question;
+  var quizQues = chalk.bold.blueBright(ques);
   var ans = questions[i].answer;
   var options = questions[i].options;
-  var index = readLineSync.keyInSelect(options, ques);
+  var index = readLineSync.keyInSelect(options, quizQues);
   var input = options[index];
   quizGame(input, ans);
 
