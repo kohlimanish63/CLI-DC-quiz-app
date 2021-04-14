@@ -20,9 +20,38 @@ var questions = [
     options: ["metropolis", "chicago", "gotham city"]
   },
   {
-    question: "4. How did Spiderman have his superpowers? ",
-    answer: "bitten by spider",
-    options: ["born with superpowers", "affected by chemicals", "bitten by spider"]
+    question: "4. Which superhero is blinded by radioactive components and nicknamed the “Man without fear”? ",
+    answer: "daredevil",
+    options: ["daredevil", "green lantern", "wolverine"]
+  },{
+    question: "5. Which superhero has super tools such as the magic lasso and bullet-proof bracelets? ",
+    answer: "wonder woman",
+    options: ["super girl", "wonder woman", "catwomen"]
+  },
+  {
+    question: " 6.In addition to Hal Jordan and Alan Scott, The Green Lantern also uses which name as a secret identity? ",
+    answer: "Kyle Rayner",
+    options: ["Kyle Rayner", "Barry Allen","Britt Reid"]
+  },
+  {
+    question: "7. Which character is usually romantically paired with Batman? ",
+    answer: "catwomen",
+    options: ["catwomen","the black canary", "hawkgirl"]
+  },
+  {
+    question: "8. Who was the first female superhero of the Justice Society of America? ",
+    answer:"wonder women",
+    options: ["electra", "wonder women", "storm"]
+  },
+  {
+    question: "9. What villain got his distinctive appearance from toxic chemicals at a plant? ",
+    answer: "joker",
+    options: ["doomsday", "two face", "joker"]
+  },
+  {
+    question: "10. Raymond Palmer is the alter ego of which superhero? ",
+    answer: "the atom",
+    options: ["the atom", "the green arrow", "hawkman"]
   }
 ];
 
@@ -43,11 +72,11 @@ function quizGame(input, answer) {
 }
 
 for (var i = 0; i < questions.length; i++) {
-  if(i===5) {
-    console.log("------Level-2-------");
+  if(i===3) {
+    console.log(chalk.bold.bgCyan("------Level-2-------"));
   }
-  if(i===10) {
-    console.log("------Level-3-------");
+  if(i===6) {
+    console.log(chalk.bold.bgBlue2("------Level-3-------"));
   }
   var ques = questions[i].question;
   var quizQues = chalk.bold.blueBright(ques);
